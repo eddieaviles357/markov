@@ -1,5 +1,5 @@
 /** Textual markov chain generator */
-
+const fs = require('fs');
 
 class MarkovMachine {
 
@@ -28,4 +28,9 @@ class MarkovMachine {
   }
 }
 
-module.exports = { MarkovMachine }
+const getFileData = () => {
+  const cb = (err, data) => (err) ? process.kill(1) : data;
+  return fs.readFileSync('eggs.txt', 'utf-8', cb) 
+}
+
+module.exports = { MarkovMachine, getFileData }
