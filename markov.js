@@ -17,6 +17,7 @@ class MarkovMachine {
    *  {"the": ["cat", "hat"], "cat": ["in"], "in": ["the"], "hat": [null]} */
 
   makeChains() {
+    getFileData('eggs.txt');
     // TODO
   }
 
@@ -28,9 +29,6 @@ class MarkovMachine {
   }
 }
 
-const getFileData = () => {
-  const cb = (err, data) => (err) ? process.kill(1) : data;
-  return fs.readFileSync('eggs.txt', 'utf-8', cb) 
-}
+const getFileData=(file)=>fs.readFileSync(file, 'utf-8', (err, data) => (err) ? process.kill(1) : data);
 
 module.exports = { MarkovMachine, getFileData }
