@@ -3,5 +3,8 @@
  */
 const { MarkovMachine, getFileData } = require('./markov');
 
-let mrkMch = new MarkovMachine(getFileData('eggs.txt'));
-console.log(mrkMch.makeText(50))
+
+if(process.argv[2] === 'file') {
+    let mrkMch = new MarkovMachine( getFileData( process.argv[3] ) );
+    console.log( mrkMch.makeText() );
+}
