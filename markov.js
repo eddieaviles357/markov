@@ -51,4 +51,4 @@ class MarkovMachine {
 const getFileData = ( file ) => fs.readFileSync( file, 'utf-8', ( err, data ) => ( err ) ? process.kill(1) : data );
 const choice = ( num ) => Math.floor(Math.random() * num);
 
-module.exports = { MarkovMachine, getFileData }
+module.exports = { MarkovMachine, getFileData,choice }
