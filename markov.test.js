@@ -44,13 +44,12 @@ describe('Markov machine test', () => {
         expect(mm.mChains.get('hat')[0]).toBe(null);
     });
 
-    test('makeText method should return markov chain give n words', () => {
+    test('makeText method should return markov chain Arrya and be < or = to n', () => {
         expect(mm.makeText(num)).toBeInstanceOf(Array);
         expect(mm.makeText(num).length).toBeLessThanOrEqual(num);
-        console.log(mm.makeText(5))
     })
 
-    test('Contructor has no data', () => {
+    test('Contructor has no data must throw Error', () => {
         expect(() => {
             new MarkovMachine();
         }).toThrow();
